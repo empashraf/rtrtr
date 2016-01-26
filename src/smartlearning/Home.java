@@ -192,7 +192,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void Display_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Display_BtnActionPerformed
-    
+    String sd=null;
      try {
          pst=con.prepareStatement("insert into login (username,password) values(?,?)");
          pst.setString(1, user_name.getText());
