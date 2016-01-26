@@ -45,9 +45,6 @@ public class Home extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        user_name = new javax.swing.JTextField();
-        Display_Btn = new javax.swing.JButton();
-        password = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -67,43 +64,19 @@ public class Home extends javax.swing.JFrame {
 
         jInternalFrame1.setVisible(true);
 
-        Display_Btn.setText("ADD");
-        Display_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Display_BtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(253, 253, 253)
-                        .addComponent(Display_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(user_name)
-                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))))
-                .addContainerGap(214, Short.MAX_VALUE))
+            .addGap(0, 1436, Short.MAX_VALUE)
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(user_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
-                .addComponent(Display_Btn)
-                .addContainerGap(165, Short.MAX_VALUE))
+            .addGap(0, 1090, Short.MAX_VALUE)
         );
 
         desktopPane.add(jInternalFrame1);
-        jInternalFrame1.setBounds(0, 0, 768, 542);
+        jInternalFrame1.setBounds(0, 0, 1452, 1146);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -191,22 +164,6 @@ public class Home extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void Display_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Display_BtnActionPerformed
-    String sd=null;
-     try {
-         pst=con.prepareStatement("insert into login (username,password) values(?,?)");
-         pst.setString(1, user_name.getText());
-         pst.setString(2, password.getText());
-         pst.execute();
-         user_name.setText("");
-         password.setText("");
-         user_name.requestFocus();
-     } catch (SQLException ex) {
-         Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-     }
-      
-    }//GEN-LAST:event_Display_BtnActionPerformed
-
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
        jInternalFrame1.setVisible(true);
     }//GEN-LAST:event_openMenuItemActionPerformed
@@ -247,7 +204,6 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Display_Btn;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -261,11 +217,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JTextField password;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private javax.swing.JTextField user_name;
     // End of variables declaration//GEN-END:variables
 
 }
